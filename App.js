@@ -1,20 +1,31 @@
+import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableWithoutFeedback, TouchableNativeFeedback, SafeAreaView, Button, TextInput } from 'react-native';
+import SignupScreen from './Signup'
+import Footer from './Footer'
 
 export default function App() {
+  const handlePress = () => console.log("Text Pressed");
+  const [email, onEmailChange] = React.useState('Email');
+  const [password, onPasswordChange] = React.useState('Password');
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
+
+    <SafeAreaView style={styles.container}>
+      <SignupScreen  style={styles.signup_cont} />
+      <Footer />
+      
       <StatusBar style="auto" />
-    </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
+    backgroundColor: '#222228',
     alignItems: 'center',
     justifyContent: 'center',
-  },
+    
+  }
+    
 });
